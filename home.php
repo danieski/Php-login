@@ -1,17 +1,29 @@
-<?php
+<html>
+ <head>
+  <title>Prueba de PHP</title>
+  <link rel="stylesheet" href="style.css">
+  
+ </head>
+ <body>
+<?php 
+    session_start();
     include("mysql.php");
-    echo("it works");
+    
 if(isset($_POST['submit'])){
-    $name = $_POST['name'];
-    $pwd = $_POST['pwd'];
-    $query = "SELECT * FROM users WHERE name = '$name' AND pass = '$pwd'";
-    $result = mysqli_query($conn, $query);
+   
     if(mysqli_num_rows($result) > 0){
         echo("<br><h1>Login successful</h1>");
     }else{
         header("Location: login.php");
     }
 }
-else{
-    echo("Login failed");
-}
+
+?>
+<header>
+    <h1>Welcome <?php echo $_SESSION['lname']?> </h1>
+   <button onclick="window.location.href='/logout.php'">Log out</button>
+</header>
+
+
+</html>
+</body>
