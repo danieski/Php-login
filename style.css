@@ -24,3 +24,11 @@ div{
 footer{
     background-color: black;
 }
+table{
+    border-collapse: collapse;
+    width: 100%;
+    color: #588c7e;
+    font-family: monospace;
+    font-size: 25px;
+    text-align: left;
+}
